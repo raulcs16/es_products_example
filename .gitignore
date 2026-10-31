@@ -89,3 +89,10 @@ out/
 # Build outputs across workspace packages
 dist/
 build/
+
+scraper/__pycache__
+scraper/data
+scraper/output
+scraper/venv
+
+**/.vagrant/*

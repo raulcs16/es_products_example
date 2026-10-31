@@ -1,0 +1,66 @@
+@url = http://127.0.0.1:9200/products
+
+GET {{url}}/_mapping
+
+
+### SPECS
+GET {{url}}/_search
+Content-Type: application/json
+
+{
+  "size": 0,
+  "aggs": {
+    "all_spec_names": {
+      "terms": {
+        "field": "specNames",
+        "size": 5
+      }
+    }
+  }
+}
+
+### CERTIFICATIONS
+GET {{url}}/_search
+Content-Type: application/json
+
+{
+  "size": 0,
+  "aggs": {
+    "global_certifications": {
+      "terms": {
+        "field": "certIcons.specName.keyword",
+        "size": 50
+      }
+    }
+  }
+}
+
+
+### Attributes
+GET {{url}}/_search
+Content-Type: application/json
+
+{
+  "size": 0,
+  "aggs": {
+    "all_spec_names": {
+      "terms": {
+        "field": "attributeNames",
+        "size": 10
+      }
+    }
+  }
+}
+
+###
+GET {{url}}/_search
+Content-Type: application/json
+
+{
+  "size": 0,
+  "query": {
+    "exists": {
+      "field": "attributeOptionsMap"
+    }
+  }
+}

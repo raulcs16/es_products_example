@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  /* LIGHT THEME (Base) */
+  --bg-dark: hsl(210, 20%, 98%); /* Clean bright canvas */
+  --bg: hsl(210, 15%, 94%); /* Surface background */
+  --bg-light: hsl(0, 0%, 100%); /* Elevated white cards */
+  --text-primary: hsl(210, 25%, 10%); /* Deep charcoal text */
+  --text-secondary: hsl(210, 10%, 45%); /* Muted tech gray */
+  --border: hsl(210, 15%, 85%); /* Crisp structural border */
+  --highlight: hsl(210, 20%, 20%); /* Active/hover dark tone */
+
+  --gradient: linear-gradient(
+    180deg,
+    hsl(210, 15%, 94%) 0%,
+    hsl(210, 20%, 98%) 100%
+  );
+  --gradient-hover: linear-gradient(
+    180deg,
+    hsl(210, 15%, 90%) 0%,
+    hsl(210, 15%, 94%) 100%
+  );
+  --shadow:
+    0px 2px 8px hsla(210, 20%, 10%, 0.08), 0px 1px 2px hsla(210, 20%, 10%, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* DARK THEME (Precise Inverse) */
+    --bg-dark: hsl(210, 15%, 4%); /* Deep industrial carbon black */
+    --bg: hsl(210, 12%, 8%); /* Surface background */
+    --bg-light: hsl(210, 10%, 14%); /* Elevated surfaces & cards */
+    --text-primary: hsl(210, 20%, 98%); /* Crisp white text */
+    --text-secondary: hsl(210, 10%, 65%); /* Muted tech gray */
+    --border: hsl(210, 10%, 20%); /* Precision clean border */
+    --highlight: hsl(210, 15%, 85%); /* Active/hover highlight tone */
+
+    --gradient: linear-gradient(
+      180deg,
+      hsl(210, 12%, 8%) 0%,
+      hsl(210, 15%, 6%) 100%
+    );
+    --gradient-hover: linear-gradient(
+      180deg,
+      hsl(210, 10%, 12%) 0%,
+      hsl(210, 12%, 8%) 100%
+    );
+    --shadow:
+      0px 4px 12px hsla(0, 0%, 0%, 0.5), 0px 1px 3px hsla(0, 0%, 0%, 0.3);
+  }
+}
+
+@theme inline {
+  --color-bg-dark: var(--bg-dark);
+  --color-bg: var(--bg);
+  --color-bg-light: var(--bg-light);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  --color-highlight: var(--highlight);
+
+  --background-image-primary-gradient: var(--gradient);
+  --background-image-hover-gradient: var(--gradient-hover);
+
+  --shadow-primary: var(--shadow);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.4);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

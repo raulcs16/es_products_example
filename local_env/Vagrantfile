@@ -1,0 +1,17 @@
+ Vagrant.configure("2") do |config|
+  config.vm.box = "spox/ubuntu-arm"
+  config.vm.box_version= "1.0.0"
+  config.vm.hostname = "search"
+
+  config.vm.network "forwarded_port", guest: 9200, host: 9200
+  config.vm.network "forwarded_port", guest: 5601, host: 5601
+
+
+  config.vm.provider "vmware_desktop" do |vmware|
+    vmware.memory = "8192" # Upgraded to 8GB RAM
+    vmware.cpus = 4        # Upgraded to 4 vCPUs
+    vmware.gui = false
+    vmware.allowlist_verified = true
+  end
+  config.vm.provision "shell", path: "provision.sh"
+end

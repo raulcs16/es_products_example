@@ -1,0 +1,204 @@
+{
+    "mappings": {
+        "properties": {
+            "id": {
+                "type": "keyword"
+            },
+            "sku": {
+                "type": "keyword"
+            },
+            "name": {
+                "type": "text",
+                "fields": {
+                    "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                    }
+                }
+            },
+            "shortDesc": {
+                "type": "text"
+            },
+            "longDesc": {
+                "type": "text"
+            },
+            "currencyCode": {
+                "type": "keyword"
+            },
+            "whatIsInTheBox": {
+                "type": "text"
+            },
+            "price": {
+                "type": "double"
+            },
+            "availableProductQuantity": {
+                "type": "double"
+            },
+            "minQuantity": {
+                "type": "double"
+            },
+            "leadTime": {
+                "type": "integer"
+            },
+            "flags": {
+                "type": "keyword"
+            },
+            "category": {
+                "type": "nested",
+                "properties": {
+                    "id": {
+                        "type": "keyword"
+                    },
+                    "name": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "categoryNames": {
+                "type": "keyword"
+            },
+            "attributeNames": {
+                "type": "keyword"
+            },
+            "attributeOptionsMap": {
+                "type": "flattened"
+            },
+            "attributes": {
+                "type": "nested",
+                "properties": {
+                    "apiName": {
+                        "type": "keyword"
+                    },
+                    "label": {
+                        "type": "keyword"
+                    },
+                    "suquence": {
+                        "type": "integer"
+                    },
+                    "options": {
+                        "type": "nested",
+                        "properties": {
+                            "label": {
+                                "type": "keyword"
+                            },
+                            "value": {
+                                "type": "keyword"
+                            }
+                        }
+                    }
+                }
+            },
+            "attributesCanonicalKeyToProductId": {
+                "type": "nested",
+                "properties": {
+                    "canonicalKey": {
+                        "type": "keyword"
+                    },
+                    "productId": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "recommendedProducts": {
+                "type": "nested",
+                "properties": {
+                    "label": {
+                        "type": "keyword"
+                    },
+                    "productId": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "recommendedAccessories": {
+                "type": "nested",
+                "properties": {
+                    "label": {
+                        "type": "keyword"
+                    },
+                    "productId": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "images": {
+                "properties": {
+                    "id": {
+                        "type": "keyword"
+                    },
+                    "imageUrl": {
+                        "type": "keyword",
+                        "index": false
+                    },
+                    "sortOrder": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "links": {
+                "properties": {
+                    "link_type": {
+                        "type": "keyword"
+                    },
+                    "mediaName": {
+                        "type": "keyword"
+                    },
+                    "url": {
+                        "type": "keyword",
+                        "index": false
+                    }
+                }
+            },
+            "certIcons": {
+                "properties": {
+                    "contentKey": {
+                        "type": "keyword"
+                    },
+                    "specName": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "specCategories": {
+                "type": "keyword"
+            },
+            "specNames": {
+                "type": "keyword"
+            },
+            "specsMap": {
+                "type": "flattened"
+            },
+            "specs": {
+                "type": "nested",
+                "properties": {
+                    "category": {
+                        "type": "keyword"
+                    },
+                    "label": {
+                        "type": "keyword"
+                    },
+                    "measurement": {
+                        "type": "keyword"
+                    },
+                    "name": {
+                        "type": "keyword"
+                    },
+                    "sequence": {
+                        "type": "integer"
+                    },
+                    "suffix": {
+                        "type": "keyword"
+                    },
+                    "value": {
+                        "type": "text",
+                        "fields": {
+                            "keyword": {
+                                "type": "keyword"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

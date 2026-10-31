@@ -1,0 +1,45 @@
+{
+    "name": "server-express-app",
+    "version": "0.1.0",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "dotenv -e .env -- tsx watch ./src/index.ts",
+        "build": "tsc",
+        "clean": "rm -rf dist",
+        "test": "jest"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./*": {
+            "types": "./dist/*.d.ts",
+            "import": "./dist/*.js"
+        }
+    },
+    "dependencies": {
+        "@repo/utility": "*",
+        "@repo/authentication": "*",
+        "@repo/config-postgres": "*",
+        "express": "^5.2.1"
+    },
+    "devDependencies": {
+        "@repo/config-eslint": "*",
+        "@repo/config-typescript": "*",
+        "@types/express": "^5.0.6",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.15.3",
+        "dotenv-cli": "^11.0.0",
+        "esbuild": "^0.28.1",
+        "eslint": "^9.39.1",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.3.2",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.23.1",
+        "typescript": "5.9.2"
+    }
+}
